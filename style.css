@@ -131,5 +131,55 @@ h1 {
 
   .small h3 {
     font-size: 15px;
-  }
+.live-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  margin: 0 0 28px;
+  border-radius: 22px;
+}
+
+.live-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.live-card h2 {
+  margin: 5px 0;
+  font-size: 38px;
+}
+
+.live-card h2 span {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.live-card small {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.live-dot {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--green-soft);
+  position: relative;
+}
+
+.live-dot::before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--green);
+  inset: 0;
+  margin: auto;
 }
