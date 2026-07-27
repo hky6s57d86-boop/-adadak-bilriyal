@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta name="theme-color" content="#f4f7f5">
+
+  <title>عدادك بالريال</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="container">
+
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">لوحة متابعة الكهرباء</p>
+        <h1>عدادك بالريال</h1>
+      </div>
+
+      <div class="logo">💰</div>
+    </header>
+
+
+    <section class="card main-card">
+
+      <div class="card-heading">
+        <div>
+          <p class="house-name">بيت العقيق</p>
+          <p class="title">الفاتورة الحالية</p>
+        </div>
+
+        <span class="status">ضمن المتوقع</span>
+      </div>
+
+      <h2 class="main-price">
+        <span id="totalBill">2,278</span>
+        <small>ر.س</small>
+      </h2>
+
+      <div class="progress">
+        <div class="progress-fill" id="mainProgress"></div>
+      </div>
+
+      <div class="progress-labels">
+        <span>بداية الشهر</span>
+        <span>الهدف 2,600 ر.س</span>
+      </div>
+
+      <div class="forecast">
+        <span>المتوقع نهاية الشهر</span>
+        <strong>
+          <span id="forecastBill">2,610</span>
+          ر.س
+        </strong>
+      </div>
+
+    </section>
+
+
+    <section class="grid">
+
+      <article class="small">
+        <p>اليوم</p>
+        <h3>38 ر.س</h3>
+      </article>
+
+      <article class="small">
+        <p>أمس</p>
+        <h3>42 ر.س</h3>
+      </article>
+
+      <article class="small saving">
+        <p>الفرق</p>
+        <h3>-4 ر.س</h3>
+      </article>
+
+    </section>
+
+
+    <section class="live-card">
+
+      <div>
+        <p class="eyebrow">معدل الصرف الآن</p>
+
+        <div class="live-price">
+          2.83
+          <span>ريال/ساعة</span>
+        </div>
+
+        <p class="live-note">أقل من متوسط اليوم</p>
+      </div>
+
+      <div class="live-circle">
+        <div class="live-dot"></div>
+      </div>
+
+    </section>
+
+
+    <section class="meters-section">
+
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">العدادات</p>
+          <h2>تفاصيل البيت</h2>
+        </div>
+
+        <button
+          type="button"
+          class="edit-button"
+          onclick="openEditor()"
+        >
+          تعديل القيم
+        </button>
+      </div>
+
+
+      <article class="meter">
+
+        <div class="meter-heading">
+          <strong>🏠 الدور الأرضي</strong>
+
+          <strong class="meter-price">
+            <span id="groundValue">1,625</span>
+            ر.س
+          </strong>
+        </div>
+
+        <div class="meter-progress">
+          <div
+            class="meter-fill"
+            id="groundProgress"
+          ></div>
+        </div>
+
+        <div class="meter-details">
+          <span id="groundPercent">71٪ من الإجمالي</span>
+          <span class="warning">مرتفع</span>
+        </div>
+
+      </article>
+
+
+      <article class="meter">
+
+        <div class="meter-heading">
+          <strong>🏡 الشقة الأولى</strong>
+
+          <strong class="meter-price">
+            <span id="apartmentOneValue">144</span>
+            ر.س
+          </strong>
+        </div>
+
+        <div class="meter-progress">
+          <div
+            class="meter-fill"
+            id="apartmentOneProgress"
+          ></div>
+        </div>
+
+        <div class="meter-details">
+          <span id="apartmentOnePercent">
+            6٪ من الإجمالي
+          </span>
+
+          <span class="normal">طبيعي</span>
+        </div>
+
+      </article>
+
+
+      <article class="meter">
+
+        <div class="meter-heading">
+          <strong>🏡 الشقة الثانية</strong>
+
+          <strong class="meter-price">
+            <span id="apartmentTwoValue">110</span>
+            ر.س
+          </strong>
+        </div>
+
+        <div class="meter-progress">
+          <div
+            class="meter-fill"
+            id="apartmentTwoProgress"
+          ></div>
+        </div>
+
+        <div class="meter-details">
+          <span id="apartmentTwoPercent">
+            5٪ من الإجمالي
+          </span>
+
+          <span class="normal">طبيعي</span>
+        </div>
+
+      </article>
+
+
+      <article class="meter">
+
+        <div class="meter-heading">
+          <strong>🏢 الملحق</strong>
+
+          <strong class="meter-price">
+            <span id="annexValue">399</span>
+            ر.س
+          </strong>
+        </div>
+
+        <div class="meter-progress">
+          <div
+            class="meter-fill"
+            id="annexProgress"
+          ></div>
+        </div>
+
+        <div class="meter-details">
+          <span id="annexPercent">
+            18٪ من الإجمالي
+          </span>
+
+          <span class="medium">متوسط</span>
+        </div>
+
+      </article>
+
+    </section>
+
+
+    <section class="insight-card">
+
+      <div class="insight-icon">⚡</div>
+
+      <div>
+        <p class="eyebrow">ملاحظة ذكية</p>
+
+        <h3 id="insightTitle">
+          الدور الأرضي يمثل أغلب الفاتورة.
+        </h3>
+
+        <p id="insightText">
+          خفض استهلاكه 10٪ قد يوفر قرابة
+          <strong id="savingValue">163 ر.س</strong>
+          شهريًا.
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <div class="modal" id="editorModal">
+
+    <div class="modal-overlay" onclick="closeEditor()"></div>
+
+    <div class="modal-box">
+
+      <div class="modal-header">
+        <div>
+          <p class="eyebrow">تحديث البيانات</p>
+          <h2>تعديل قيم العدادات</h2>
+        </div>
+
+        <button
+          type="button"
+          class="close-button"
+          onclick="closeEditor()"
+          aria-label="إغلاق"
+        >
+          ×
+        </button>
+      </div>
+
+
+      <label class="input-group">
+        <span>الدور الأرضي</span>
+
+        <div class="input-wrapper">
+          <input
+            id="groundInput"
+            type="number"
+            min="0"
+            inputmode="decimal"
+          >
+
+          <span>ر.س</span>
+        </div>
+      </label>
+
+
+      <label class="input-group">
+        <span>الشقة الأولى</span>
+
+        <div class="input-wrapper">
+          <input
+            id="apartmentOneInput"
+            type="number"
+            min="0"
+            inputmode="decimal"
+          >
+
+          <span>ر.س</span>
+        </div>
+      </label>
+
+
+      <label class="input-group">
+        <span>الشقة الثانية</span>
+
+        <div class="input-wrapper">
+          <input
+            id="apartmentTwoInput"
+            type="number"
+            min="0"
+            inputmode="decimal"
+          >
+
+          <span>ر.س</span>
+        </div>
+      </label>
+
+
+      <label class="input-group">
+        <span>الملحق</span>
+
+        <div class="input-wrapper">
+          <input
+            id="annexInput"
+            type="number"
+            min="0"
+            inputmode="decimal"
+          >
+
+          <span>ر.س</span>
+        </div>
+      </label>
+
+
+      <button
+        type="button"
+        class="save-button"
+        onclick="saveValues()"
+      >
+        حفظ القيم
+      </button>
+
+      <button
+        type="button"
+        class="reset-button"
+        onclick="resetValues()"
+      >
+        استرجاع القيم الأصلية
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="toast" id="toast">
+    تم حفظ القيم بنجاح
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
